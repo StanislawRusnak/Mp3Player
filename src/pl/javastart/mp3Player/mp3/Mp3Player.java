@@ -23,13 +23,13 @@ public class Mp3Player {
         this.mp3Collection = new Mp3Collection();
     }
      
-    public void play() {
+    public void play() {	//defines play function
         if(mediaPlayer != null && (mediaPlayer.getStatus() == Status.READY || mediaPlayer.getStatus() == Status.PAUSED)) {
             mediaPlayer.play();
         }
     }
      
-    public void stop() {
+    public void stop() {	//defines stop function
         if(mediaPlayer != null && mediaPlayer.getStatus() == Status.PLAYING) {
             mediaPlayer.pause();
         }
@@ -49,7 +49,7 @@ public class Mp3Player {
         }
     }
      
-    public void loadSong(int index) {
+    public void loadSong(int index) {	//load new song into player
         if(mediaPlayer != null && mediaPlayer.getStatus() == Status.PLAYING) {
             mediaPlayer.stop();
         }

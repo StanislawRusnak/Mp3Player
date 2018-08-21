@@ -9,7 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
  
 public class Mp3Parser {
-    public Mp3Song createMp3Song(File file) {
+    public Mp3Song createMp3Song(File file) {		//creating new mp3 file for player
         Mp3Song result = new Mp3Song();
         MP3File mp3File = null;
         try {

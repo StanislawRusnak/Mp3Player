@@ -38,7 +38,7 @@ public class MenuPaneController implements Initializable {
 		configureMenu();
 	}
 
-	private void configureMenu() {
+	private void configureMenu() {	//menu functions configuring
         closeMenuItem.setOnAction(x -> Platform.exit());
  
         aboutMenuItem.setOnAction(new EventHandler<ActionEvent>() {

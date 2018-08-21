@@ -27,7 +27,7 @@ public class ContentPaneController implements Initializable {
         configureTable();
     }
  
-    private void configureTable() {
+    private void configureTable() {		//table configuration
         TableColumn<Mp3Song, String> titleColumn = new TableColumn<Mp3Song, String>(TITLE_COLUMN);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
          

@@ -47,22 +47,22 @@ public class MainController implements Initializable {
        configureMenu();
    }
 
-   private void configureMenu() {
+   private void configureMenu() {	//configuring menu
        MenuItem openFile = menuPaneController.getFileMenuItem();
        MenuItem openDir = menuPaneController.getDirMenuItem();
         
-       openFile.setOnAction(new EventHandler<ActionEvent>() {
+       openFile.setOnAction(new EventHandler<ActionEvent>() {	//opens only one file
            @Override
            public void handle(ActionEvent event) {
                FileChooser fc = new FileChooser();
-               fc.getExtensionFilters().add(new ExtensionFilter("Mp3", "*.mp3"));
+               fc.getExtensionFilters().add(new ExtensionFilter("Mp3", "*.mp3"));	//only mp3 files
                File file = fc.showOpenDialog(new Stage());
                mp3Player.getMp3Collection().clear();
                mp3Player.getMp3Collection().addSong(mp3Parser.createMp3Song(file));
            }
        });
         
-       openDir.setOnAction(new EventHandler<ActionEvent>() {
+       openDir.setOnAction(new EventHandler<ActionEvent>() {	//opens all files from directory
            @Override
            public void handle(ActionEvent event) {
                DirectoryChooser dc = new DirectoryChooser();
@@ -88,7 +88,7 @@ public class MainController implements Initializable {
        });
    }
 
-   private void configureVolume() {
+   private void configureVolume() {		//sound regulation slider
        Slider volSlider = controlPaneController.getVolumeSlider();
        final double minVolume = 0;
        final double maxVolume = 1;
@@ -103,7 +103,7 @@ public class MainController implements Initializable {
        });
    }
 
-   private void configControlPaneAction() {
+   private void configControlPaneAction() {	//configuring control buttons
        TableView<Mp3Song> contentTable = contentPaneController.getContentTable();
        ToggleButton playButton = controlPaneController.getPlayButton();
        Button prevButton = controlPaneController.getPrevButton();
@@ -146,7 +146,7 @@ public class MainController implements Initializable {
        });
    }
 
-   private void configureProgressBar() {
+   private void configureProgressBar() {		//automatic progress bar setting
        Slider songSlider = controlPaneController.getSongSlider();
        mp3Player.getMediaPlayer().setOnReady(new Runnable() {
            @Override
